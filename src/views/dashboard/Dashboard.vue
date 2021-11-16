@@ -1,5 +1,5 @@
 <template>
-  <div>欢迎来到BeeShop商城</div>
+  <div>欢迎使用Tiny Store</div>
 </template>
 
 <script type="es6">

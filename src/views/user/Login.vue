@@ -73,6 +73,7 @@ export default {
       login({ username, password }).then((res) => {
         if (res.err_code === ERR_OK) {
           saveUser(res.data)
+          this.$cookies.set('admin_login', res.data)
           this.$router.push('/')
         } else {
           this.$message.error(res.data)
