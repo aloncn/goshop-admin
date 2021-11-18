@@ -15,8 +15,10 @@ router.beforeEach((to, from, next) => {
   NProgress.start() // start progress bar
 
   /* has cookie */
-  console.log('cookie == ', Vue.$cookies.get('admin_login'))
-  if (Vue.$cookies.get('admin_login')) {
+  console.log('cookie adminLogin ', Vue.$cookies.get('admin_login'))
+  const loginData = Vue.$cookies.get('loginData')
+  console.log('cookie loginData ', Vue.$cookies.get('loginData'))
+  if (Vue.$cookies.get('admin_login') || loginData) {
     if (to.path === loginRoutePath) {
       next({ path: defaultRoutePath })
       NProgress.done()
